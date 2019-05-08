@@ -1,13 +1,6 @@
 let teamOneScore = 0
 let teamTwoScore = 0
 
-
-if (teamOneScore < 0) {
-  console.log('range was hit')
-} else (teamOneScore < 0)(!isNaN(teamOneScore))
-{
-
-
 //reset scores team1//
 const resetScoreTeamOne = () => {
   teamOneScore = 0
@@ -21,32 +14,38 @@ const resetScoreTeamTwo = () => {
 }
 
 //add button team1//
-//set range to not go < 0//
+//set range to not go above 21//
 const addScoreTeamOne = () => {
-  teamOneScore += 1
-  document.querySelector('.team1Score').textContent = teamOneScore
+  if (teamOneScore < 21) {
+    teamOneScore += 1
+    document.querySelector('.team1Score').textContent = teamOneScore
+  }
 }
 
 //add button team2//
+//set range to not go above 21//
 const addScoreTeamTwo = () => {
-  teamTwoScore += 1
-  document.querySelector('.team2Score').textContent = teamTwoScore
+  if (teamOneScore < 21) {
+    teamTwoScore += 1
+    document.querySelector('.team2Score').textContent = teamTwoScore
+  }
 }
 
 //subtract button team1//
+//set range to not go < 0//
 const subtractScoreTeamOne = () => {
-  if (teamOneScore < 0) {
-  teamOneScore += -1
-  document.querySelector('.team1Score').textContent = teamOneScore
-}
+  if (teamOneScore > 0) {
+    teamOneScore += -1
+    document.querySelector('.team1Score').textContent = teamOneScore
+  }
 }
 
 //subtract button team2//
 const subtractScoreTeamTwo = () => {
-  if (teamOneScore < 0) {
-  teamTwoScore += -1
-  document.querySelector('.team2Score').textContent = teamTwoScore
-}
+  if (teamOneScore > 0) {
+    teamTwoScore += -1
+    document.querySelector('.team2Score').textContent = teamTwoScore
+  }
 }
 
 //update team1 name//
